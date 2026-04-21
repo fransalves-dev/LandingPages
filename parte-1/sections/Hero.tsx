@@ -38,7 +38,7 @@ export default function Hero() {
               Blog
             </a>
           </div>
-          <button className="px-[35px] py-[20px] gap-[10px] border-[1px] border-black text-black rounded-[14px] text-[20px] leading-[28px] font-normal cursor-pointer">
+          <button className="px-[35px] py-[20px] gap-[10px] border-[1px] border-black text-black rounded-[14px] text-[20px] leading-[28px] font-normal cursor-pointer hover:bg-green hover:border-white transition-colors duration-300">
             Request a quote
           </button>
         </div>
@@ -53,7 +53,7 @@ export default function Hero() {
             online through a range of services including SEO, PPC, social media
             marketing, and content creation.
           </p>
-          <button className="px-[35px] py-[20px] gap-[10px] max-w-[264px] text-white rounded-[14px] bg-dif-black text-[20px] leading-[28px] font-normal cursor-pointer">
+          <button className="px-[35px] py-[20px] gap-[10px] max-w-[264px] text-white rounded-[14px] bg-dif-black text-[20px] leading-[28px] font-normal cursor-pointer hover:bg-green hover:text-black transition-colors duration-300">
             Book a consultation
           </button>
         </div>

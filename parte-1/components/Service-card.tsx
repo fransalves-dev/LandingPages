@@ -3,9 +3,9 @@ import Image from "next/image";
 type CardProps = {
   title: string;
   image: string;
-  bgColor?: "green" | "dif-white" | "dif-black";
-  titleBg?: "green" | "white";
-  iconVariant?: "dark" | "light";
+  bgColor: "green" | "dif-white" | "dif-black";
+  titleBg: "green" | "white";
+  iconVariant: string;
 };
 
 export default function Card({
@@ -13,7 +13,7 @@ export default function Card({
   image,
   bgColor = "dif-white",
   titleBg = "green",
-  iconVariant = "dark",
+  iconVariant,
 }: CardProps) {
   const bgMap = {
     green: "bg-green",
@@ -26,42 +26,32 @@ export default function Card({
     white: "bg-white text-black",
   };
 
-  const iconMap = {
-    dark: "bg-black border-[3px] border-green text-white",
-    light: "bg-white border-[3px] border-black text-black",
-  };
+  const textColor = bgColor === "dif-black" ? "text-white" : "text-black";
 
   return (
     <div
       className={`w-[600px] h-[310px] rounded-[45px] border border-black shadow-[0px_5px_0px_0px_#191A23] p-[50px] flex justify-between ${bgMap[bgColor]}`}
     >
       <div className="flex flex-col justify-between">
-        <h3
-          className={`text-[20px] leading-[28px] font-normal px-[7px] py-[4px] rounded-[7px] inline-block ${titleBgMap[titleBg]}`}
-        >
-          {title}
-        </h3>
-
-        <div className="flex items-center gap-[15px] cursor-pointer">
-          <div
-            className={`w-[41px] h-[41px] flex items-center justify-center rounded-full ${iconMap[iconVariant]}`}
+        <h3 className="text-[30px] max-w-[231px] font-medium leading-[1.4]">
+          <span
+            className={`${titleBgMap[titleBg]} text-black px-[7px] py-[2px] rounded-[8px] [box-decoration-break:clone]`}
           >
-            →
-          </div>
+            {title}
+          </span>
+        </h3>
+        <div className="flex items-center gap-[15px] cursor-pointer">
+          <Image src={iconVariant} alt="Icon" width={41} height={41} />
 
-          <span className="text-[20px] leading-[28px] font-normal">
+          <span
+            className={`text-[20px] leading-[28px] font-normal ${textColor} hover:font-bold`}
+          >
             Learn more
           </span>
         </div>
       </div>
 
-      <Image
-        src={image}
-        alt={title}
-        width={210}
-        height={170}
-        className="object-contain"
-      />
+      <Image src={image} alt={title} width={210} height={170} />
     </div>
   );
 }
