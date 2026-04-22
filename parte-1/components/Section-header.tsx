@@ -15,7 +15,7 @@ export default function SectionHeader({
   };
 
   return (
-    <div className="w-full px-[100px] flex items-center gap-[40px]">
+    <div className="w-full flex items-center gap-[40px]">
       <h2
         className={`text-[40px] leading-[100%] font-medium px-[7px] py-[4px] rounded-[7px] ${titleBgMap[titleBg]}`}
       >
