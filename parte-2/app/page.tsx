@@ -207,8 +207,10 @@ export default function Home() {
               }`}
             >
               <span
-                className={`flex h-12 w-12 items-center justify-center rounded-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_6px_14px_rgba(124,58,237,0.1)] ${
-                  isDark ? "bg-violet-400/15 text-violet-200" : "bg-violet-100 text-violet-700"
+                className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
+                  isDark
+                    ? "bg-violet-400/15 text-violet-200 shadow-[0_10px_24px_rgba(76,29,149,0.22)]"
+                    : "bg-violet-100 text-violet-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_6px_14px_rgba(124,58,237,0.1)]"
                 }`}
               >
                 <span className="material-symbols-rounded text-[20px]">{stat.icon}</span>
@@ -236,93 +238,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-          {/* <div className="relative mx-auto flex w-full max-w-[580px] items-center justify-center">
-            <div className="absolute inset-x-8 top-10 h-56 rounded-full bg-[radial-gradient(circle,#a78bfa_0%,rgba(167,139,250,0.28)_40%,rgba(255,255,255,0)_74%)] blur-3xl" />
-            <div className="absolute right-16 top-4 h-28 w-28 rounded-full bg-violet-200/50 blur-2xl" />
-
-            <div className="relative w-full">
-              <div className="mx-auto w-full max-w-[430px] rounded-[28px] border border-slate-800/10 bg-[#141826] p-4 shadow-[0_38px_80px_rgba(18,24,40,0.28)]">
-                <div className="mb-4 flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-rose-400" />
-                  <span className="h-3 w-3 rounded-full bg-amber-300" />
-                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
-                </div>
-
-                <div className="overflow-hidden rounded-[20px] bg-[#0d1120] p-5 text-sm text-slate-200">
-                  <div className="mb-5 inline-flex rounded-full bg-white/6 px-3 py-1 text-xs text-slate-400">
-                    app.py
-                  </div>
-                  <div className="space-y-3 font-mono text-[13px] leading-6 sm:text-sm">
-                    <div>
-                      <span className="text-fuchsia-400">import</span> <span className="text-slate-100">openai</span>
-                    </div>
-                    <div>
-                      <span className="text-fuchsia-400">import</span> <span className="text-slate-100">pandas</span>{" "}
-                      <span className="text-fuchsia-400">as</span> <span className="text-sky-300">pd</span>
-                    </div>
-                    <div className="pt-2">
-                      <span className="text-fuchsia-400">def</span> <span className="text-emerald-300">analisar_dados</span>
-                      <span className="text-slate-100">(df):</span>
-                    </div>
-                    <div className="pl-4 text-slate-400">prompt = &quot;&quot;&quot;</div>
-                    <div className="pl-4 text-slate-400">
-                      Analise os dados abaixo e gere insights importantes para o relatorio
-                    </div>
-                    <div className="pl-4 text-slate-400">&quot;&quot;&quot;</div>
-                    <div className="pl-4">
-                      <span className="text-slate-100">resposta = </span>
-                      <span className="text-sky-300">openai</span>
-                      <span className="text-slate-100">.</span>
-                      <span className="text-emerald-300">chat.completions.create</span>
-                    </div>
-                    <div className="pl-8 text-slate-400">model=&quot;gpt-4.1&quot;,</div>
-                    <div className="pl-8 text-slate-400">messages=[...</div>
-                    <div className="pl-4">
-                      <span className="text-fuchsia-400">return</span> <span className="text-slate-100">resposta</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -right-1 top-12 rounded-[20px] border border-violet-100 bg-white px-5 py-4 shadow-[0_18px_45px_rgba(91,51,255,0.16)]">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-violet-100 text-violet-700">
-                    <span className="material-symbols-rounded text-[22px]">neurology</span>
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">IA integrada</p>
-                    <p className="text-xs text-slate-500">do basico ao avancado</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -left-1 bottom-3 rounded-[20px] border border-violet-100 bg-white px-5 py-4 shadow-[0_18px_45px_rgba(91,51,255,0.14)]">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-violet-100 text-violet-700">
-                    <span className="material-symbols-rounded text-[22px]">folder_copy</span>
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">Projetos praticos</p>
-                    <p className="text-xs text-slate-500">desde o modulo 1</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute right-4 bottom-16 rounded-[20px] bg-[#20263a] px-5 py-4 text-white shadow-[0_22px_50px_rgba(16,24,40,0.24)]">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-violet-200">
-                    <span className="material-symbols-rounded text-[22px]">insights</span>
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold">Insights gerados</p>
-                    <p className="text-xs text-slate-300">+85% de eficiencia</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         */}
