@@ -12,4 +12,6 @@
 - O que ajustou manualmente e por quê?
 > Ajustei o design do Hero na primeira parte e a seção de Case Studies para manter a fidelidade ao Figma, ajustando os tamanhos e estrutura de layout para conseguir um resultado mais visualmente semelhante. Outro ajuste manual foi a troca de cores, adição de responsividade e animações aos componentes na segunda parte já que percebi que alguns dos aspectos do design ficaram melhores com cores e disposição diferentes, assim como quis garantir que o layout não quebraria em outros dispositivos e mostrar animações a hovers em botões para melhorar a UI/UX da página.
 
-
+## Links
+- Parte 1: https://positivus-lemon-tau.vercel.app/
+- Parte 2: https://python-curso.vercel.app/
